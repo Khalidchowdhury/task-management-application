@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-4">
+        <h1 class="text-2xl font-bold text-center">Task Management Application</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-8 p-4">
+        <!-- Add Task Button -->
+        <button id="add-task-btn" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition mb-4">Add Task</button>
+
+        <!-- Task Modal -->
+        <div id="task-modal" class="fixed top-0 left-0 w-full h-full flex items-center justify-center hidden bg-gray-900 bg-opacity-50">
+            <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold">Add a New Task</h2>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-600" onclick="closeModal()">&#x2715;</button>
+                </div>
+
+
+                <form id="task-form" class="flex flex-col gap-4">
+                    <input type="text" id="task-title" class="p-2 border border-gray-300 rounded" placeholder="Task Title">
+                    <textarea id="task-description" class="p-2 border border-gray-300 rounded" placeholder="Task Description"></textarea>
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Add Task</button>
+                </form>
+                <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-600" onclick="closeModal()">&#x2715;</button>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="flex justify-end mb-4">
+            <button id="new-tab-btn" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition" onclick="showTab('new')">New</button>
+            <button id="progress-tab-btn" class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition ml-2" onclick="showTab('progress')">In Progress</button>
+            <button id="complete-tab-btn" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition ml-2" onclick="showTab('complete')">Complete</button>
+        </div>
+
+        <!-- Task List Sections -->
+        <section id="new-tab" class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">New Tasks</h2>
+            <ul id="new-task-list" class="space-y-4">
+
+                <!-- New task all statsu -->
+
+            </ul>
+        </section>
+
+        <section id="progress-tab" class="hidden bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">In Progress Tasks</h2>
+            <ul id="progress-task-list" class="space-y-4">
+
+                <!-- In Progress all statsu -->
+
+            </ul>
+        </section>
+
+        <section id="complete-tab" class="hidden bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">Completed Tasks</h2>
+            <ul id="complete-task-list" class="space-y-4">
+
+                <!-- Complete all statsu -->
+
+            </ul>
+        </section>
+    </main>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
